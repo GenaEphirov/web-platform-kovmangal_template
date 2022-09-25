@@ -1,46 +1,231 @@
+/* 
+font-family: 'Marck Script', cursive;
+font-family: 'Playfair Display', serif;
+font-family: 'Rubik', sans-serif;
+*/
+
+:root {
+  --primary-color: #EF421A;
+  --background-color: #F7F2EE;
+  --Madelyn-Fill: 'Marck Script', cursive;
+  --Viaoda-Libre: 'Playfair Display', serif;
+  --Gilroy: 'Rubik', sans-serif;
+}
+
 * {
+  margin: 0;
+  padding: 0;
   box-sizing: border-box;
+  font-family: 'Rubik';
 }
 
 body {
-  margin: 0;
-  font-family: system-ui, sans-serif;
-  color: black;
-  background-color: white;
+  background-color: var(--background-color);
+  overflow-x: hidden;
 }
 
-nav {
+header {
+  height: 100px;
   display: flex;
-  flex-wrap: wrap;
+  padding: 0 60px;
+  justify-content: space-between;
+}
+
+.header__right, .header__left {
+  display: flex;
   align-items: center;
-  justify-content: center;
-  padding: 0.5rem;
-  gap: 0.5rem;
-  border-bottom: solid 1px #aaa;
-  background-color: #eee;
 }
 
-nav a {
-  display: inline-block;
-  min-width: 9rem;
-  padding: 0.5rem;
-  border-radius: 0.2rem;
-  border: solid 1px #aaa;
-  text-align: center;
+.menu {
+  display: flex;
   text-decoration: none;
-  color: #555;
 }
 
-nav a[aria-current='page'] {
-  color: #000;
-  background-color: #d4d4d4;
+.menu__text {
+  font-weight: 600;
+  font-size: 18px;
+  line-height: 110%;
+  color: black;
 }
 
-main {
-  padding: 1rem;
+.menu__lines {
+  margin: 0 4px;
 }
 
-h1 {
-  font-weight: bold;
-  font-size: 1.5rem;
+/* change margin-left/margin-right in .logo to make site responsive*/
+.logo {
+  margin-left: 45px;
+}
+
+.phone__number {
+  font-weight: 500;
+  font-size: 18px;
+  text-decoration: none;
+  color: black;
+}
+
+.contacts {
+  display: flex;
+  padding: 25px;
+  gap: 20px;
+}
+
+.contacts__item {
+  display: flex;
+  align-items: center;
+}
+
+.menu__adaptive {
+  display: none;
+}
+
+.btn {
+  overflow: hidden;
+  align-items: center;
+  text-decoration: none;
+  display: flex;
+  justify-content: space-between;
+  width: 148px;
+  height: 40px;
+  background-color: var(--primary-color);
+  border-radius: 6px;
+  border: none;
+  cursor: pointer;
+}
+
+.btn-svg-left {
+  position: relative;
+  left: 0;
+}
+
+.btn-svg-right {
+  position: relative;
+  right: 0;
+}
+
+.btn__text {
+  display: flex;
+  color: white;
+  text-decoration: none !important;
+}
+
+@media (max-width:900px) {
+  .phone__number {
+    display: none;
+  }
+}
+
+@media (max-width:650px) {
+  .header__btn {
+    display: none;
+  }
+}
+
+@media (max-width:550px) {
+  header {
+    padding: 0 20px;
+    height: 70px;
+  }
+  .menu {
+    display: none;
+  }
+  .logo {
+    margin-left: 0;
+  }
+  .logo>svg {
+    height: 50px;
+  }
+  .contacts {
+    padding: 0;
+    padding-left: 25px;
+  }
+  .menu__adaptive {
+    display: block;
+  }
+}
+
+.hero {
+  display: flex;
+  justify-content: space-between;
+}
+
+.container {
+  padding: 60px 50px 0;
+}
+
+.hero__content {
+  padding-top: 70px;
+  width: 500px;
+}
+
+.text__beauty {
+  font-family: var(--Madelyn-Fill);
+  font-weight: 300;
+  font-size: 26px;
+  color: var(--primary-color);
+
+  margin-bottom: 20px;
+}
+
+.text__name {
+  font-family: var(--Viaoda-Libre);
+  font-weight: 400;
+  font-size: 50px;
+  line-height: 52px;
+
+  margin-bottom: 50px;
+}
+
+.text__name-point {
+  position: absolute;
+  transform: translate(-35px, 15px);
+}
+
+.hero__cards {
+  display: flex;
+  width: 650px;
+  margin-bottom: 50px;
+}
+
+.hero__card {
+  display: flex;
+}
+
+.hero__card svg {
+  width: 32px;
+  height: 32px;
+
+  margin-right: 20px;
+}
+
+.card__text {
+  font-weight: 500;
+  font-size: 16px;
+  line-height: 18px;
+}
+
+.hero__btn {
+  width: 186px;
+  height: 40px;
+  font-size: 14px;
+}
+
+.hero__img {
+  width: 520px;
+  height: 692px;
+  border: 7px solid white;
+}
+
+.hero__line {
+  max-width: 120%;
+  overflow: hidden;
+  position: absolute;
+  top: -50px;
+  z-index: -9;
+}
+
+@media (max-width: 1300px) {
+  .hero_cards {
+    flex-direction: column;
+  }
 }
